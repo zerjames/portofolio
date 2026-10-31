@@ -38,8 +38,8 @@ function updateActiveLink() {
   });
 }
 
-// Typed text
-const roles = ['Web Developer', 'UI/UX Designer', 'IT Support', 'Problem Solver', 'Mahasiswa Sistem Informasi'];
+// Typed text - Disesuaikan dengan minat di CV: Web Development, IT Support, Project Management, Machine Learning
+const roles = ['Web Developer', 'IT Support', 'Project Manager', 'Machine Learning Enthusiast'];
 let roleIdx = 0, charIdx = 0, deleting = false;
 const typedEl = document.getElementById('typedText');
 if (typedEl) {
@@ -92,23 +92,6 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// Contact form
-document.getElementById('contactForm')?.addEventListener('submit', e => {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  if (btn) {
-    btn.innerHTML = '<i class="fas fa-check"></i> Pesan Terkirim!';
-    btn.style.background = '#22c55e';
-    btn.style.borderColor = '#22c55e';
-    setTimeout(() => {
-      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Pesan';
-      btn.style.background = '';
-      btn.style.borderColor = '';
-      e.target.reset();
-    }, 3000);
-  }
-});
-
 // Smooth close nav on link click
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => navLinks?.classList.remove('open'));
@@ -129,6 +112,18 @@ const certificates = [
   { title: 'Wide Area Network using Cisco Router', issuer: 'Lepkom Gunadarma', year: '2025', icon: 'fa-sitemap', img: 'Sertifikat/PEMROGRAMAN JARINGAN UNTUK WIDE AREA.png', link: 'https://drive.google.com/file/d/1YP_I7PVyCGpTttlZSlJn8CkvrvGu6UEh/view?usp=drive_link' },
 ];
 
+const certDescriptions = {
+  'Basic Web Application Design': 'Mempelajari dasar perancangan aplikasi web, mulai dari analisis kebutuhan hingga perancangan alur sistem dan antarmuka.',
+  'Basic Web Application Development': 'Mempelajari dasar pembuatan aplikasi web, meliputi pemrograman sisi server dan pengelolaan database.',
+  'Building Website using HTML5': 'Mempelajari cara membangun struktur halaman website menggunakan HTML5.',
+  'Dasar Pemrograman Berbasis Web': 'Mempelajari dasar pemrograman web, mencakup HTML, CSS, dan pemrograman sisi server.',
+  'Dasar Pemrograman Jaringan': 'Mempelajari konsep dasar jaringan komputer dan pemrograman jaringan.',
+  'Go-Lang for Intermediate': 'Mempelajari pemrograman Go tingkat menengah, seperti struktur data, concurrency, dan pengembangan aplikasi.',
+  'Pemrograman Go untuk Pemula': 'Mempelajari dasar bahasa pemrograman Go, mulai dari sintaks, variabel, hingga fungsi.',
+  'Pemrograman Jaringan Lokal Area': 'Mempelajari konfigurasi jaringan lokal (LAN) menggunakan Cisco Router.',
+  'Wide Area Network using Cisco Router': 'Mempelajari perancangan dan konfigurasi jaringan WAN menggunakan Cisco Router.'
+};
+
 function renderCertificates() {
   const grid = document.getElementById('certGrid');
   if (!grid || certificates.length === 0) return;
@@ -139,12 +134,14 @@ function renderCertificates() {
     const thumbHTML = cert.img
       ? `<div class="cert-thumb cert-thumb-img"><img src="${cert.img}" alt="${cert.title}" loading="lazy" /></div>`
       : `<div class="cert-thumb"><i class="fas ${cert.icon}"></i></div>`;
+    const desc = cert.desc || certDescriptions[cert.title] || '';
     card.innerHTML = `
       ${thumbHTML}
       <div class="cert-info">
         <h3>${cert.title}</h3>
         <span>${cert.issuer}</span>
         <span class="cert-tag">${cert.year}</span>
+        ${desc ? `<p class="cert-desc">${desc}</p>` : ''}
       </div>`;
     card.addEventListener('click', () => window.open(cert.link, '_blank'));
     grid.appendChild(card);
