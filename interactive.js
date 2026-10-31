@@ -209,12 +209,14 @@
     kopi: {
       title: 'Galeri Kopi Galaxy - Website Company Profile',
       role: 'Proyek Akademik | Universitas Gunadarma',
+      img: 'Projek/galerikopi/foto bersama owner.jpeg',
       points: [
         'Mengembangkan website company profile untuk memperkenalkan informasi bisnis Galeri Kopi Galaxy secara digital, termasuk menu, event, galeri, fasilitas, dan profil perusahaan.',
         'Berperan sebagai Project Manager dengan tanggung jawab mengoordinasikan anggota tim, membagi tugas, dan memantau progres pengembangan website.',
         'Melakukan diskusi dengan pemilik bisnis untuk mengumpulkan dan menganalisis kebutuhan pengguna (requirement gathering), menentukan konten serta fitur website, dan mempresentasikan hasil pengembangan kepada klien.'
       ],
-      tech: ['PHP', 'CSS', 'MySQL']
+      tech: ['PHP', 'CSS', 'MySQL'],
+      gallery: 'kopi', shots: 5
     }
   };
 

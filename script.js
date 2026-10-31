@@ -185,6 +185,16 @@ const projectGalleries = {
       { src: 'Projek/sayan/sayan (7).png', caption: '7/8 — Manajemen Lapangan: Pengaturan data lapangan, jam operasional, dan tarif sewa oleh admin.' },
       { src: 'Projek/sayan/sayan (8).png', caption: '8/8 — Halaman Login: Autentikasi pengguna dan admin sistem booking lapangan futsal.' }
     ]
+  },
+  kopi: {
+    title: 'Galeri Kopi Galaxy — Website Company Profile & Dokumentasi Proyek',
+    images: [
+      { src: 'Projek/galerikopi/foto bersama owner.jpeg', caption: '1/5 — Diskusi & Koordinasi: Foto bersama pemilik Galeri Kopi Galaxy dalam perancangan website company profile.' },
+      { src: 'Projek/galerikopi/berdiskusi dengan pegawai yang akan mengelola website.jpeg', caption: '2/5 — Requirement Gathering: Berdiskusi bersama staf pengelola untuk memetakan kebutuhan sistem dan alur informasi.' },
+      { src: 'Projek/galerikopi/foto setelah berdiskusi dan menyesuaikan tampilan sesuai keinginan user.jpeg', caption: '3/5 — Validasi Desain Antarmuka: Menyesuaikan tampilan antarmuka dan konten website sesuai preferensi klien.' },
+      { src: 'Projek/galerikopi/menjelaskan apa saja fitur dan informasi yang tertera pada website.jpeg', caption: '4/5 — Presentasi & Edukasi Fitur: Menjelaskan navigasi, fitur menu, event, dan informasi yang tertera pada website.' },
+      { src: 'Projek/galerikopi/menyusun dokumen.jpeg', caption: '5/5 — Dokumentasi Proyek: Menyusun dokumentasi spesifikasi kebutuhan dan laporan akhir proyek pengembangan website.' }
+    ]
   }
 };
 
